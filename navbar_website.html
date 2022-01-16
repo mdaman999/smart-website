@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+  <title>round</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sec1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url("../images/bg3.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+    position: fixed;
+    z-index: 10;
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+}
+
+nav img {
+    float: left;
+    width: 150px;
+    height: 50px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul li {
+    position: relative;
+    display: inline-block;
+    margin: 18px 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+nav ul li ::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background: #1b9bff;
+    transition: 0.5s;
+}
+
+nav ul li :hover::after {
+    width: 100%;
+}
+
+.content {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: #fff;
+    text-align: center;
+}
+
+.content .title {
+    font-size: 35px;
+    font-weight: bold;
+    height: 35px;
+    text-align: left;
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.content .title .slider {
+    margin-left: 10px;
+    color: #1b9bff;
+    box-sizing: border-box;
+    animation: slider 4s linear infinite;
+    -webkit-animation: slider 4s linear infinite;
+}
+
+@keyframes slider {
+    0% {
+        margin-top: -200px;
+    }
+    8%,
+    30% {
+        margin-top: -80px;
+    }
+    40%,
+    65% {
+        margin-top: -38px;
+    }
+    100%,
+    75% {
+        margin-top: 0px;
+    }
+}
+
+.content p {
+    margin: 10px auto;
+}
+
+.content button {
+    padding: 15px 25px;
+    margin: 10px;
+    letter-spacing: 3px;
+    border: 2px solid #1b9bff;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(to right, transparent 50%, #1b9bff 50%);
+    background-size: 200%;
+    background-position: left;
+    transition: 0.5s;
+}
+
+.content button:hover {
+    background-position: right;
+}
+
+span {
+    margin: 5px 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 900;
+    float: right;
+    display: none;
+}
+
+@media only screen and (max-width:700px) {
+    span {
+        display: block;
+    }
+    nav ul {
+        position: fixed;
+        top: 40px;
+        right: -10px;
+        width: 40%;
+        height: 50%;
+        text-align: center;
+        z-index: 10;
+        background-color: #000;
+        visibility: hidden;
+    }
+    nav ul li {
+        display: block;
+        margin: 20px 0;
+    }
+    nav ul li :hover::after {
+        width: 0;
+    }
+    a.active,
+    nav ul li a:hover {
+        background-color: #1b9bff;
+        transition: 0.5s;
+    }
+}
+
+.sec2 {
+    position: relative;
+    top: 100vh;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.sec2 .data {
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.sec2 .data h2,
+.sec2 .data h3 {
+    margin: 20px;
+    text-transform: uppercase;
+}
+
+.sec2 .data h1 {
+    letter-spacing: 6px;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+}
+
+.sec2 p {
+    margin: 20px;
+    word-wrap: break-word;
+    font-family: 'Times New Roman', Times, serif;
+}
+  </style>
+</head>
+<body>
+<section class="sec1">
+<nav>
+  <img src="../images/logo9.png">
+  <span onClick="myfun()">&#9776;</span>
+  <ul id="menu">
+      <li><a class="active" href="#">home</a></li>
+      <li><a href="#sect2">Services</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">help</a></li>
+      <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <div class="title">Make unusual
+    <div class="slider">
+      <div>NOW</div>
+      <div>TODAY</div>
+      <div>FREE</div>
+    </div>
+  </div>
+  <p> Google that is primarily available on mobile and smart home devices. Unlike the company's <br>previous virtual assistant, Google Now, the Google Assistant can engage in two-way conversations. Wikipedia</p>   <button type="button">Register now</buttom>
+</section>
+
+<section class="sec2" id="sect2">
+   <div class="data">
+   <h2>Best Boats for Ocean Boating</h2>
+   <p>Checking out our Boat Finder tool is an excellent way to find the best boat for you and your family, but if you want to limit your search to the best boats for ocean boating, there are some special considerations to take into account. Filter your search by “Boat Offshore” on the Boat Finder, and you’ll find you’re left with nine choices.Behavioral vaccines focused on supportive connection can involve offering an enthusiastic hello when meeting, building confidence about assignments by giving wise feedback and encouraging students to ask questions.
+— Sandra M. Chafouleas, The Conversation, "Bringing ‘behavioral vaccines’ to school: 5 ways educators can support student well-being," 8 Apr. 2021
+In the event anybody in the rover’s vicinity calls out a hello, the mic will surely capture that, too.
+— Jeffrey Kluger, Time, "Listen to the Sounds of NASA's Perseverance Rover Driving on Mars," 18 Mar. 2021,5 ways educators can support student well-being," 8 Apr. 2021
+In the event anybody in the rover’s vicinity calls out a hello, the mic will surely capture that, too.</p>
+   <h3>Must-Haves for Boating on the Ocean</h3>
+   <p>Sportfishing Yachts
+Trawlers
+Walkarounds
+Obviously, this is a wide range of boat types and which will be your personal best choice depends on how you plan to use your boat. If you enjoy saltwater fishing and you dream about hunting down huge pelagic trophy fish, this list of choices shrinks to include center consoles, sportfishing yachts, and walkarounds. But if you just want to go on dolphin- or whale-watching cruises or head down the coast to a new destination, one of the other types of boats will probably be a better pick.
+
+In all of these cases, however, one thing’s for sure: you want to feel safe and confident in your boat’s abilities. To that end, there are some specific attributes any vessel needs if you plan to use it for ocean boating.
+
+Explore Saltwater Fishing Boats Remember, the ocean is essentially limitless when you’re on a boat, and while a boat may be perfectly competent to take offshore, some will burn a lot more fuel than others doing so. There are many high-performance boats, for example, that are designed for offshore racing, can handle heavy seas, and are equipped to navigate beyond sight of land. But those big engines need to be fed lots of fuel, and this can mean range restrictions. If the captain miscalculates his or her range,</p>
+   <h1><u>Thankyou</u></h1>
+  </div>
+</section>
+
+<script>
+
+function myfun(){
+    var x=document.getElementById("menu");
+
+    if(x.style.display=="block"){
+        x.style.display="none";
+    }
+    else{
+        x.style.display="block";
+        x.style.visibility="visible";
+    }
+} 
+</script>
+</body>
+</html>
